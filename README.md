@@ -20,6 +20,10 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
+## Using a different Bootstrap theme
+
+After following the installation steps above, download a new bootstrap.css and bootstrap.min.css to replace the ones in /bower_components/bootstrap/dist/css.
+
 ## Running / Development
 
 * `ember server`
