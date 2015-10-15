@@ -1,19 +1,6 @@
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-{{#link-to "application" tagName="li"}}<a class="navbar-brand" href="#">HOME</a>{{/link-to}}
-</div>
-<div>
-<ul class="nav navbar-nav">
-	{{#link-to "posts" tagName="li"}}<a href="/posts">Posts</a>{{/link-to}}
-	{{#link-to "calendar" tagName="li"}}<a href="/calendar">Calendar</a>{{/link-to}}
-	{{#link-to "about" tagName="li"}}<a href="/about">About</a>{{/link-to}}
-	{{#link-to "admin" tagName="li"}}<a href="/admin">Admin</a>{{/link-to}}
-</ul>
-</div>
-</div>
-</nav>
-<br>
+{{nav-bar}}
 <h2 id="title">Welcome to Ember.js</h2>
 
+<div class="container">
 {{outlet}}
+</div>
