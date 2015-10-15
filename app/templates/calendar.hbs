@@ -1,2 +1,11 @@
-{{full-calendar events=events}}
+Events Start<br>
+{{log "model"}}
+{{log "model: " model.content}}
+{{#each event in model.content}}
+	{{log event.start}}
+	{{event.title}}<br>
+	{{event.start}}<br>
+{{/each}}
+Events End<br>
+{{full-calendar events=model.content}}
 {{outlet}}
