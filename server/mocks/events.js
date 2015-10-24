@@ -1,20 +1,21 @@
 module.exports = function(app) {
   var express = require('express');
   var eventsRouter = express.Router();
+  var date = new Date();
 
   eventsRouter.get('/', function(req, res) {
     res.send({
       'events': [
         {
           id: 1,
-          title: "event1",
-          start: "2015-10-10",
+          title: 'stupid',
+          start: '2015-10-11',
         },
         {
           id: 2,
-          title: "event2",
-          start: "2015-10-13",
-        },
+          title: 'stupid2',
+          start: '2015-10-11',
+        }
       ]
     });
   });
