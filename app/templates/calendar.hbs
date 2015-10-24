@@ -1,2 +1,46 @@
-{{full-calendar events=events}}
+<head>
+<!--link rel='stylesheet' href='fullcalendar/fullcalendar.css'/-->
+<script type="text/x-handlebars-template" id="event-template">
+{{#each events}}
+{title: "{{this.title}}",
+start: "{{this.start}}",
+end: "{{this.end}}",
+allday: "{{this.allday}}"},
+{{/each}}
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var eventVals = Ember.$('#event-template').html();
+		//var eventVals = JSON.stringify(raw_eventVals);
+
+		var newEvents = "[";
+		newEvents+=eventVals;
+		newEvents+="]";
+		newEvents = newEvents.replace(/(\r\n|\n|\r)/gm,"");
+		//var obj = JSON.parse(newEvents);
+		//console.log(typeof obj);
+		//console.log( obj);
+		console.log(newEvents);
+
+	    // page is now ready, initialize the calendar...
+	    $('#calendar').fullCalendar({
+	    	height: Ember.$(window).height()-(Ember.$('.navbar-header').height()+40),
+	    	events: [{title: "super fun thing",start: "2015-10-11",end: "<!---->",allday: "<!---->"},{title: "not so fun thing",start: "2015-10-13",end: "<!---->",allday: "<!---->"},{title: "this event shows time",start: "2015-10-09T12:30:00",end: "<!---->",allday: "<!---->"},]
+	    })
+
+	});
+</script>
+</head>
+{{#each event in events}}
+{{event.title}}
+{{/each}}
+
+<div id='calendar'>
+{{!full-calendar events=events height=events.heightValue}}
+</div>
+<script type="text/javascript">
+console.log("height should change");
+Ember.$('#full-calendar').fullCalendar('option', 'height', 100);
+console.log("Did height change?");
+</script>
 {{outlet}}
