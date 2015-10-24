@@ -8,11 +8,16 @@ export default DS.Model.extend({
     {
       id: 1,
       name: 'Travel',
-      posts: [1,2,3,4,5]
+      posts: [1,2]
     },
     {
       id: 2,
       name: 'Surfing',
+      posts: [1]
+    },
+    {
+      id: 3,
+      name: 'Chatbot',
       posts: [1]
     },
   ]
