@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
 				}
 			}
 
-			for(var i=0; i< DBuser.content.length; i++){
+			for(i=0; i< DBuser.content.length; i++){
 				//console.log(DBuser.content[i].username);
 				if(user === DBuser.content[i].username){
 					//if(pass === DBuser.content[i].password){
@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
 				}
 			}
 
-			if(match == false){
+			if(match === false){
 				this.set('errorMsg', 'invalid attempt');
 			}
 			else{
