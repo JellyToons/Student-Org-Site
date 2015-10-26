@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       //TODO: add account to database
       var pass = this.get('password');
       this.store.createRecord('user',{
-      	name: name,
+      	username: name,
       	password: pass
       });
       //users.save();
