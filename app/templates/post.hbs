@@ -1,0 +1,81 @@
+<header id="page-title" class="jumbotron background">
+<div id="title-image" class="bg">
+	<img {{bind-attr src=postContent.image}} alt="">
+</div>
+<div class="container">
+	<div class="horizontal-center vertical-center">
+		<h1 class="article-title">{{postContent.title}}</h1>
+		{{#if postContent.subtitle}}
+			<h2 class="article-subtitle">{{postContent.subtitle}}</h2>
+		{{/if}}
+	</div>
+</div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3 post-sidebar">
+			<div class="post-sidebar-module">
+				<div class="author">
+					<a href="#">
+						{{#if postContent.author.profileImageUrl}}<img {{bind-attr src="postContent.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{postContent.author.name}}</span>
+					</a>
+				</div>
+				<div class="date-published">
+					{{postContent.datePublished}}
+				</div>
+			</div>
+
+			<div class="post-sidebar-module">
+				<h3><i class="fa fa-newspaper-o"></i> Recent Posts</h3>
+				<div class="recent-posts-cont">
+					<ul class="image-list">
+						{{#each post in recentPosts}}
+							<li class="table">
+								{{#link-to "post" post classNames="table-row"}}
+									<div class="vertical-center">
+										<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image">
+									</div>
+									<div class="vertical-center article-title">
+										{{post.title}}
+									</div>
+								{{/link-to}}
+							</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+
+			<div class="post-sidebar-module">
+				<h3><i class="fa fa-tags"></i> Tags</h3>
+				<div class="tag-cont">
+				{{#each tag in postContent.tags}}
+					<button type="submit" class="btn">{{tag.name}}</button>
+				{{/each}}
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8 post-main pull-right">
+			<div class="bs-component">
+				<article>
+				{{{postContent.content}}}
+				</article>
+			</div>
+
+			<ul class="pager">
+			{{#if previousPost}}
+				<li class="previous">{{#link-to "post" previousPost}}← Older{{/link-to}}</li>
+			{{else}}
+				<li class="previous disabled"><a>← Older</a></li>
+			{{/if}}
+			{{#if nextPost}}
+				<li class="next">{{#link-to "post" nextPost}}Newer →{{/link-to}}</li>
+			{{else}}
+				<li class="next disabled"><a>Newer →</a></li>
+			{{/if}}
+			</ul>
+		</div>
+
+	</div>
+</div>

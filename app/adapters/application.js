@@ -1,6 +1,5 @@
 import DS from 'ember-data';
-//import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-export default DS.RESTAdapter.extend({
+export default DS.FixtureAdapter.extend({
 	namespace: 'api'
 });

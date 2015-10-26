@@ -1,1 +1,135 @@
+<header id="page-title" class="jumbotron background">
+	<h1 class="text-center">Posts, Articles, & Writeups</h1>
+</header>
+
+<div class="container">
+	{{#each post in model.posts}}
+		<article class="article-preview">
+			<div class="row">
+				<div class="col-sm-2">
+					<h2 class="publish-day">12</h2>
+					<div class="publish-month">February</div>
+				</div>
+				<div class="col-sm-10">
+					<h2 class="post-title">{{#link-to "post" post}}{{post.title}}{{/link-to}}</h2>
+					<h3 class="post-subtitle">{{post.subtitle}}</h3>
+					<div class="post-preview">{{text-preview post.content 200 250}}</div>
+					<div class="author">
+						<a href="#">
+							<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image"><span class="author-name">{{post.author.name}}</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	{{/each}}
+</div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3><i class="fa fa-leaf"></i> Iconic Locations</h3>
+				<!--<address>
+					<strong>Website:</strong><br />
+					<a href="#">www.iconic-locations.com</a>
+				</address>-->
+				<address>
+					<strong>Address:</strong><br />
+					1110 S 67th St<br />
+					Omaha, NE 68182
+				</address>
+
+				<div class="social-cont">
+					<span class="fa-stack facebook">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack twitter">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack google">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack instagram">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fa fa-newspaper-o"></i> Recent Posts</h3>
+
+				<div class="recent-posts-cont">
+					<ul class="image-list">
+						<li class="table">
+							<a href="#" class="table-row">
+								<div class="vertical-center">
+									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg" class="author-image">
+								</div>
+								<div class="vertical-center article-title">
+									Snapper Rocks Surfing
+								</div>
+							</a>
+						</li>
+						<li class="table">
+							<a href="#" class="table-row">
+								<div class="vertical-center">
+									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg" class="author-image">
+								</div>
+								<div class="vertical-center article-title">
+									The Best Sushi in St. Louis
+								</div>
+							</a>
+						</li>
+						<!--<li class="table">
+							<a href="#" class="table-row">
+								<div class="vertical-center">
+									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/thisisvandie/73.jpg" class="author-image">
+								</div>
+								<div class="vertical-center article-title">
+									Seven Sweet Skyline Stays
+								</div>
+							</a>
+						</li>
+						<li class="table">
+							<a href="#" class="table-row">
+								<div class="vertical-center">
+									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/lukekndy/73.jpg" class="author-image">
+								</div>
+								<div class="vertical-center article-title">
+									The Best Small Towns
+								</div>
+							</a>
+						</li>-->
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fa fa-tags"></i> Tags</h3>
+				<div class="tag-cont">
+				{{#each tag in model.tags}}
+					<button type="submit" class="btn">{{tag.name}}</button>
+				{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
 {{outlet}}

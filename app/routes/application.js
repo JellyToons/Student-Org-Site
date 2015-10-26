@@ -6,6 +6,17 @@ export default Ember.Route.extend({
 		this.authCheck(transition);
 		//will have other stuff here once its connected to restapi
 	},
+	  // Data here is accessible from anywhere in the application
+	  model: function() {
+		return Ember.RSVP.hash({
+			posts: this.get('store').find('post').then(function(posts) {
+				return posts.sortBy('datePublished').reverseObjects();
+			}),
+			tags: this.get('store').find('tag').then(function(posts) {
+				return posts.sortBy('name');
+			})
+	    });
+	  },
 	authCheck: function(transition){
 		//Method to check user credentials and redirect if necessary
 		console.log('Checking authentication');
@@ -15,7 +26,7 @@ export default Ember.Route.extend({
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
 		if(!auth.loggedIn){
-			if(transition.targetName == 'auth' || transition.targetName == 'createAccount'){
+			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'){
 				
 			}
 			else{
@@ -33,6 +44,7 @@ export default Ember.Route.extend({
 	},
 	setupController: function(controller, model){
 		controller.set('authController', this.controllerFor('auth'));
+		controller.set('posts', model.posts);
 	},
 	actions: {
 		willTransition: function(transition){
