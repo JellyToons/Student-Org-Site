@@ -11,11 +11,14 @@ export default Ember.Route.extend({
 		console.log('Checking authentication');
 		var t = this;
 		var auth = t.controllerFor('auth');
-		console.log("are you logged in "+ auth.get('loggedIn'))
+		console.log("are you logged in "+ auth.get('loggedIn'));
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
 		if(!auth.loggedIn){
-			if(transition.targetName !== 'auth'){
+			if(transition.targetName == 'auth' || transition.targetName == 'createAccount'){
+				
+			}
+			else{
 				t.set('currentTransition', transition);
 				transition.abort();
 				console.log('User is unauthenicated, redirecting');

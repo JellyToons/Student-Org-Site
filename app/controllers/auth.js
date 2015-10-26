@@ -11,13 +11,19 @@ export default Ember.Controller.extend({
 			console.log('login');
 			var user = this.get('username');
 			if(user!=="Brian"){
-				this.set('errorMsg', 'youre not awesome');
+				this.set('errorMsg', 'invalid attempt');
 			}
 			else{
 				this.set('loggedIn', true);
-				this.transitionTo('home');
+				this.transitionTo('index');
 			}
+			this.set('password', '');
 
+		},
+		logout: function(){
+			this.set('loggedIn', false);
+			this.set('username', '');
+			this.set('password', '');
 		},
 		test: function(){
 			console.log('test');

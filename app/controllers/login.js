@@ -5,14 +5,21 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
 
   actions: {
-    authenticate() {
-      var pass = this.get('password');
-      let { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:oauth2', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error);
-        alert("Logging in: " + name);
-      });
-      alert("success?");
+    authenticate(){
+      //do stuff to authenticate here
+      console.log('login');
+      var user = this.get('identification');
+      if(user!=="Brian"){
+        this.set('errorMsg', 'invalid attempt');
+      }
+      else{
+        this.set('loggedIn', true);
+        this.transitionTo('index');
+      }
+
+    },
+    test: function(){
+      console.log('test');
     }
   }
 });

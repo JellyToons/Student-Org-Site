@@ -1,1 +1,19 @@
-{{outlet}}
+{{log username}}
+{{#if loggedIn}} {{! Display user name and logout button}}
+	Hello {{username}}
+	<button type="button" class="btn btn-default" {{action 'logout'}}>Log out</button>
+{{else}} {{!Display login page}}
+	<form>
+		<div class="form-group">
+			{{input class="form-control" value=username action="login" placeholder="Username"}}
+		</div>
+		<div class="form-group">
+			{{input class="form-control" value=password action="login" placeholder="Password" type="password"}}
+		</div>
+		<label class="checkbox">
+		  {{input type="checkbox" checked=remember}} Remember me
+		</label>
+		<button type="button" class="btn btn-default" {{action 'login'}}>Sign in</button>
+		<button type="button" class="btn btn-default" {{action 'logout'}}>Sign out</button>
+	</form>
+{{/if}}
