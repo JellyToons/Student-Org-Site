@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'student-org-site',
+    authenticationRoute: 'signin',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

@@ -37,6 +37,7 @@
     "ember-data": "1.0.0-beta.18",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
+    "ember-simple-auth": "1.0.1",
     "express": "^4.13.3",
     "glob": "^4.5.3",
     "morgan": "^1.6.1"

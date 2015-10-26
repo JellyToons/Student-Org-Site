@@ -12,6 +12,9 @@ Router.map(function() {
   this.route('about', {});
   this.route('admin', {});
   blogRoutes(this);
+  this.route('login', {});
+  this.route('createAccount', {});
+  this.route('auth', {});
 });
 
 export default Router;

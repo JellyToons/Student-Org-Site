@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-	didInsertElement: function() {
-		this.$(window).resize(function(){
+	//didInsertElement: function() {
+		/*this.$(window).resize(function(){
 			height: Ember.$(window).height()-(Ember.$('.navbar-header').height()+40)
-		});
+		});*/
 
 		/*console.log(this.$("#calendar").css('width'));
 		console.log(this.$("#calendar").css('height'));
@@ -20,5 +20,5 @@ export default Ember.View.extend({
 		});
 		console.log(this.$("#calendar").css('width'));
 		console.log(this.$("#calendar").css('height'));*/
-	}
+	//}
 });

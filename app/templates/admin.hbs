@@ -1,1 +1,8 @@
-{{outlet}}
+
+<form {{action 'removeUser' usernmame on='submit'}}>
+  <div class="form-group">
+    <label for="username">Remove User</label>
+    {{input value=username placeholder='Enter Username to Remove' class='form-control'}}
+  </div>
+  <button type="submit" class="btn btn-default">Remove</button>
+</form>
