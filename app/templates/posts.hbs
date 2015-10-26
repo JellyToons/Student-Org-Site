@@ -1,16 +1,8 @@
 <header id="page-title" class="jumbotron background">
-	<div id="title-image" class="bg">
-		<img src="http://lorempixel.com/1000/570/sports/1/" alt="">
-	</div>
-	<div class="container">
-		<div class="horizontal-center vertical-center">
-			<h1 class="article-title">Snapper Rocks Surfing</h1>
-			<h2 class="article-subtitle">Surfing Away on Pennies a Day</h2>
-		</div>
-	</div>
+	<h1 class="text-center">Posts, Articles, & Writeups</h1>
 </header>
 
-<div class="container foreground">
+<div class="container">
 	{{#each post in model}}
 		<article class="article-preview">
 			<div class="row">
@@ -21,7 +13,7 @@
 				<div class="col-sm-10">
 					<h2 class="post-title">{{#link-to "post" post}}{{post.title}}{{/link-to}}</h2>
 					<h3 class="post-subtitle">{{post.subtitle}}</h3>
-					<div class="post-preview"><p>Are sentiments apartments decisively the especially alteration. Thrown shy denote ten ladies though ask saw. Or by to he going think order event music. Incommode so intention defective at convinced. Led income months itself and houses you. After nor you leave might share court balls.</p></div>
+					<div class="post-preview">{{text-preview post.content 200 250}}</div>
 					<div class="author">
 						<a href="#">
 							<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image"><span class="author-name">{{post.author.name}}</span>
@@ -44,8 +36,8 @@
 				</address>
 				<address>
 					<strong>Address:</strong><br />
-					3710 Glory Road<br />
-					Shelbyville, TN 37160
+					1110 S 67th St<br />
+					Omaha, NE 68182
 				</address>
 
 
@@ -125,7 +117,7 @@
 								</div>
 							</a>
 						</li>
-					</ul> 
+					</ul>
 				</div>
 
 			</div>
@@ -143,44 +135,5 @@
 		</div>
 	</div>
 </footer>
-
-<div class="container foreground">
-	<article class="article-preview">
-		<div class="row">
-			<div class="col-sm-2">
-				<h2 class="publish-day">12</h2>
-				<div class="publish-month">February</div>
-			</div>
-			<div class="col-sm-10">
-				<h2 class="post-title"><a href="#">Snapper Rocks Surfing</a></h2>
-				<h3 class="post-subtitle">Surfing Away on Pennies a Day</h3>
-				<div class="post-preview"><p>Are sentiments apartments decisively the especially alteration. Thrown shy denote ten ladies though ask saw. Or by to he going think order event music. Incommode so intention defective at convinced. Led income months itself and houses you. After nor you leave might share court balls.</p></div>
-				<div class="author">
-					<a href="#">
-						<img src="http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg" class="author-image"><span class="author-name">Brian Barrett</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</article>
-	<article class="article-preview">
-		<div class="row">
-			<div class="col-sm-2">
-				<h2 class="publish-day">6</h2>
-				<div class="publish-month">February</div>
-			</div>
-			<div class="col-sm-10">
-				<h2 class="post-title"><a href="#">The Best Sushi in St. Louis</a></h2>
-				<h3 class="post-subtitle"></h3>
-				<div class="post-preview"><p>Far much courteously goodness vulgar less regardless interminable far leopard globefish the the deer alas apologetically wildebeest vulgar among more poorly krill disrespectfully besides publicly.</p></div>
-				<div class="author">
-					<a href="#">
-						<img src="http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg" class="author-image"><span class="author-name">Janice Collins</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</article>
-</div>
 
 {{outlet}}

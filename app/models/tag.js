@@ -7,17 +7,22 @@ export default DS.Model.extend({
   FIXTURES: [
     {
       id: 1,
-      name: 'Travel',
+      name: 'C',
       posts: [1,2]
     },
     {
       id: 2,
-      name: 'Surfing',
-      posts: [2]
+      name: 'Java',
+      posts: [1]
     },
     {
       id: 3,
       name: 'Chatbot',
+      posts: [1]
+    },
+    {
+      id: 4,
+      name: 'Computers',
       posts: [2]
     },
   ]

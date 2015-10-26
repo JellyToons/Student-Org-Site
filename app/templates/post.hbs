@@ -12,92 +12,22 @@
 </div>
 </header>
 
-<div class="container foreground">
+<div class="container">
 	<div class="row">
-		<div class="col-lg-12">
-			<div class="bs-component">
-				<article>
-				{{{model.content}}}
-				<div class="horizontal-center">
-					<div class="author">
-						<a href="#">
-							{{#if model.author.profileImageUrl}}<img {{bind-attr src="model.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{model.author.name}}</span>
-						</a>
+		<div class="col-sm-3 post-sidebar">
+			<div class="post-sidebar-module">
+				<div class="author">
+					<a href="#">
+						{{#if model.author.profileImageUrl}}<img {{bind-attr src="model.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{model.author.name}}</span>
+					</a>
 				</div>
 				<div class="date-published">
 					{{model.datePublished}}
 				</div>
 			</div>
-		</article>
-			</div>
 
-			<ul class="pager">
-			{{#if previousPost}}
-				<li class="previous">{{#link-to "post" previousPost}}← Older{{/link-to}}</li>
-			{{else}}
-				<li class="previous disabled"><a>← Older</a></li>
-			{{/if}}
-			{{#if nextPost}}
-				<li class="next">{{#link-to "post" nextPost}}Newer →{{/link-to}}</li>
-			{{else}}
-				<li class="next disabled"><a>Newer →</a></li>
-			{{/if}}
-			</ul>
-
-		</div>
-	</div>
-</div>
-
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<h3><i class="fa fa-leaf"></i> Iconic Locations</h3>
-				<address>
-					<strong>Website:</strong><br />
-					<a href="#">www.iconic-locations.com</a>
-				</address>
-				<address>
-					<strong>Address:</strong><br />
-					3710 Glory Road<br />
-					Shelbyville, TN 37160
-				</address>
-
-
-				<div class="social-cont">
-					<span class="fa-stack facebook">
-						<a href="#">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-facebook fa-stack-1x fa-inverse social-ico"></i>
-						</a>
-					</span>
-
-					<span class="fa-stack twitter">
-						<a href="#">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-twitter fa-stack-1x fa-inverse social-ico"></i>
-						</a>
-					</span>
-
-					<span class="fa-stack google">
-						<a href="#">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-google-plus fa-stack-1x fa-inverse social-ico"></i>
-						</a>
-					</span>
-
-					<span class="fa-stack instagram">
-						<a href="#">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-linkedin fa-stack-1x fa-inverse social-ico"></i>
-						</a>
-					</span>
-				</div>
-
-			</div>
-			<div class="col-sm-4">
+			<div class="post-sidebar-module">
 				<h3><i class="fa fa-newspaper-o"></i> Recent Posts</h3>
-
 				<div class="recent-posts-cont">
 					<ul class="image-list">
 						{{#each post in recentPosts}}
@@ -114,57 +44,41 @@
 						{{/each}}
 					</ul>
 				</div>
-
 			</div>
-			<div class="col-sm-4">
+
+			<div class="post-sidebar-module">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
 				<div class="tag-cont">
 				{{#each tag in model.tags}}
 					<button type="submit" class="btn">{{tag.name}}</button>
 				{{/each}}
-		</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</footer>
 
-<div class="container foreground">
-	<article class="article-preview">
-		<div class="row">
-			<div class="col-sm-2">
-				<h2 class="publish-day">12</h2>
-				<div class="publish-month">February</div>
+		<div class="col-sm-8 post-main pull-right">
+			<div class="bs-component">
+				<article>
+				{{{model.content}}}
+				</article>
 			</div>
-			<div class="col-sm-10">
-				<h2 class="post-title"><a href="#">Snapper Rocks Surfing</a></h2>
-				<h3 class="post-subtitle">Surfing Away on Pennies a Day</h3>
-				<div class="post-preview"><p>Are sentiments apartments decisively the especially alteration. Thrown shy denote ten ladies though ask saw. Or by to he going think order event music. Incommode so intention defective at convinced. Led income months itself and houses you. After nor you leave might share court balls.</p></div>
-				<div class="author">
-					<a href="#">
-						<img src="http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg" class="author-image"><span class="author-name">Brian Barrett</span>
-					</a>
-				</div>
-			</div>
+
+			<ul class="pager">
+			{{#if previousPost}}
+				<li class="previous">{{#link-to "post" previousPost}}← Older{{/link-to}}</li>
+			{{else}}
+				<li class="previous disabled"><a>← Older</a></li>
+			{{/if}}
+			{{#if nextPost}}
+				<li class="next">{{#link-to "post" nextPost}}Newer →{{/link-to}}</li>
+			{{else}}
+				<li class="next disabled"><a>Newer →</a></li>
+			{{/if}}
+			</ul>
 		</div>
-	</article>
-	<article class="article-preview">
-		<div class="row">
-			<div class="col-sm-2">
-				<h2 class="publish-day">6</h2>
-				<div class="publish-month">February</div>
-			</div>
-			<div class="col-sm-10">
-				<h2 class="post-title"><a href="#">The Best Sushi in St. Louis</a></h2>
-				<h3 class="post-subtitle"></h3>
-				<div class="post-preview"><p>Far much courteously goodness vulgar less regardless interminable far leopard globefish the the deer alas apologetically wildebeest vulgar among more poorly krill disrespectfully besides publicly.</p></div>
-				<div class="author">
-					<a href="#">
-						<img src="http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg" class="author-image"><span class="author-name">Janice Collins</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</article>
+
+	</div>
 </div>
+
 
 {{outlet}}

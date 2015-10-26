@@ -7,12 +7,16 @@ export default Ember.ObjectController.extend({
     var recentPosts, index;
     recentPosts = this.get('recentPosts');
     index = recentPosts.indexOf(this.get('model'));
-    return recentPosts.objectAt(index - 1);
+    // Cap the index
+    if (index != -1) index -= 1;
+    return recentPosts.objectAt(index);
   }),
   nextPost: Ember.computed('model', 'recentPosts.@each', function() {
     var recentPosts, index;
     recentPosts = this.get('recentPosts');
     index = recentPosts.indexOf(this.get('model'));
-    return recentPosts.objectAt(index + 1);
+    // Cap the index
+    if (index != -1) index += 1;
+    return recentPosts.objectAt(index);
   })
 });

@@ -12,16 +12,6 @@ export default DS.Model.extend({
   FIXTURES: [
     {
       id: 1,
-      title: 'The Best Sushi in St. Louis',
-      subtitle: '',
-      image: 'http://lorempixel.com/1000/570/food/8/',
-      content: '<p>HTML-formatted article text</p>',
-      datePublished: new Date(Date.parse("2015-02-07T16:21:00Z")),
-      author: 2,
-      tags: [1]
-    },
-    {
-      id: 2,
       title: 'Snapper Rocks Surfing',
       subtitle: 'Surfing Away on Pennies a Day',
       content: '<p>Are sentiments apartments decisively the especially alteration. Thrown shy denote ten ladies though ask saw. Or by to he going think order event music. Incommode so intention defective at convinced. Led income months itself and houses you. After nor you leave might share court balls.</p>' +
@@ -37,6 +27,16 @@ export default DS.Model.extend({
       datePublished: new Date(Date.parse("2015-02-12T13:15:00Z")),
       author: 1,
       tags: [1, 2, 3]
+    },
+    {
+      id: 2,
+      title: 'The Best Sushi in St. Louis',
+      subtitle: '',
+      image: 'http://lorempixel.com/1000/570/food/8/',
+      content: '<p>HTML-formatted article text</p><p>Yay Sushi!</p><p>Bacon ipsum dolor amet tail shank ham hock ground round shankle salami chuck tenderloin pork belly sirloin boudin beef ribs. Meatball rump venison, meatloaf t-bone ball tip pork chop pork belly pork short ribs fatback spare ribs swine sausage. Filet mignon turkey andouille ham, jerky ball tip fatback pig tri-tip sirloin. Landjaeger ribeye rump andouille ham hock kielbasa turkey frankfurter porchetta sirloin ball tip drumstick filet mignon. Beef ribs short loin t-bone, porchetta rump pork belly biltong. Turducken ribeye t-bone sausage corned beef, cow prosciutto kevin pork rump strip steak shank bacon.</p>',
+      datePublished: new Date(Date.parse("2015-02-07T16:21:00Z")),
+      author: 2,
+      tags: [1]
     },
   ]
 });
