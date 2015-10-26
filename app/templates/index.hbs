@@ -1,3 +1,49 @@
+{{page-title title='Cool Organization Name'}}
+
+<p>
 This is the Home page
+</p>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8">
+			<h2><i class="fa fa-newspaper-o"></i> Recent Posts</h2>
+			{{#each post in model.posts}}
+				<article class="article-preview">
+					<div class="row">
+						<div class="col-sm-2">
+							<h2 class="publish-day">12</h2>
+							<div class="publish-month">February</div>
+						</div>
+						<div class="col-sm-10">
+							<h2 class="post-title">{{#link-to "post" post}}{{post.title}}{{/link-to}}</h2>
+							<h3 class="post-subtitle">{{post.subtitle}}</h3>
+							<div class="post-preview">{{text-preview post.content 200 250}}</div>
+							<div class="author">
+								<a href="#">
+									<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image"><span class="author-name">{{post.author.name}}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			{{/each}}
+		</div>
+
+		<div class="col-sm-4">
+			<h2><i class="fa fa-calendar"></i> Upcoming Events</h2>
+			<div class="upcoming-events">
+				<ul>
+				{{#each event in model.events}}
+					<li>
+						{{event.title}}<br/>
+						{{event.start}}<br/>
+					</li>
+				{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 {{outlet}}
