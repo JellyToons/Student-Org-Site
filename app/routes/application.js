@@ -12,8 +12,11 @@ export default Ember.Route.extend({
 			posts: this.get('store').find('post').then(function(posts) {
 				return posts.sortBy('datePublished').reverseObjects();
 			}),
-			tags: this.get('store').find('tag').then(function(posts) {
-				return posts.sortBy('name');
+			tags: this.get('store').find('tag').then(function(tags) {
+				return tags.sortBy('name');
+			}),
+			events: this.get('store').find('event').then(function(events) {
+				return events.sortBy('start');
 			})
 	    });
 	  },
@@ -45,6 +48,7 @@ export default Ember.Route.extend({
 	setupController: function(controller, model){
 		controller.set('authController', this.controllerFor('auth'));
 		controller.set('posts', model.posts);
+		controller.set('events', model.events);
 	},
 	actions: {
 		willTransition: function(transition){

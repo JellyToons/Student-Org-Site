@@ -4,11 +4,8 @@ export default Ember.Route.extend({
 	model: function(){
 		return Ember.RSVP.hash({
 			// Pull in the models used in /calendar and /posts
-			calendar: this.modelFor('calendar'),
-			posts: this.modelFor('posts'),
+			posts: this.modelFor('application').posts,
+			events: this.modelFor('application').events,
 		});
     },
-	setupController: function(controller, model){
-		controller.set('events', model);
-	}
 });
