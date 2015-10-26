@@ -1,12 +1,12 @@
 <header id="page-title" class="jumbotron background">
 <div id="title-image" class="bg">
-	<img {{bind-attr src=postContent.image}} alt="">
+	<img {{bind-attr src=model.image}} alt="">
 </div>
 <div class="container">
 	<div class="horizontal-center vertical-center">
-		<h1 class="article-title">{{postContent.title}}</h1>
-		{{#if postContent.subtitle}}
-			<h2 class="article-subtitle">{{postContent.subtitle}}</h2>
+		<h1 class="article-title">{{model.title}}</h1>
+		{{#if model.subtitle}}
+			<h2 class="article-subtitle">{{model.subtitle}}</h2>
 		{{/if}}
 	</div>
 </div>
@@ -17,34 +17,20 @@
 		<div class="col-lg-12">
 			<div class="bs-component">
 				<article>
-				{{{postContent.content}}}
+				{{{model.content}}}
 				<div class="horizontal-center">
 					<div class="author">
 						<a href="#">
-							{{#if postContent.author.profileImageUrl}}<img {{bind-attr src="postContent.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{postContent.author.name}}</span>
+							{{#if model.author.profileImageUrl}}<img {{bind-attr src="model.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{model.author.name}}</span>
 						</a>
 				</div>
 				<div class="date-published">
-					{{postContent.datePublished}}
+					{{model.datePublished}}
 				</div>
 			</div>
 		</article>
 			</div>
 
-			<!--<ul class="pager">
-				{{#if previousPost}}
-					<a href="/post/2">← Older</a>{{#link-to "post" tagName="li" class="previous"}}<a href="/post/2">← Older</a>{{/link-to}}
-				{{else}}
-					<li class="previous disabled"><a>← Older</a></li>
-				{{/if}}
-				{{#if nextPost}}
-					{{#link-to "post" tagName="li" class="next"}}<a href="/post/{{nextPost.id}}">Newer →</a>{{/link-to}}
-				{{else}}
-					<li class="next disabled"><a>Newer →</a></li>
-				{{/if}}
-			</ul>-->
-
-__{{nextModel.id}}__
 			<ul class="pager">
 			{{#if previousPost}}
 				<li class="previous">{{#link-to "post" previousPost}}← Older{{/link-to}}</li>
@@ -52,12 +38,11 @@ __{{nextModel.id}}__
 				<li class="previous disabled"><a>← Older</a></li>
 			{{/if}}
 			{{#if nextPost}}
-				<li class="next">{{#link-to "post" nextModel}}Newer →{{/link-to}}</li>
+				<li class="next">{{#link-to "post" nextPost}}Newer →{{/link-to}}</li>
 			{{else}}
 				<li class="next disabled"><a>Newer →</a></li>
 			{{/if}}
 			</ul>
-			<!--<a href="/post/{{nextPost.id}}">GOTO POST 2</a>-->
 
 		</div>
 	</div>
@@ -134,7 +119,7 @@ __{{nextModel.id}}__
 			<div class="col-sm-4">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
 				<div class="tag-cont">
-				{{#each tag in postContent.tags}}
+				{{#each tag in model.tags}}
 					<button type="submit" class="btn">{{tag.name}}</button>
 				{{/each}}
 		</div>
