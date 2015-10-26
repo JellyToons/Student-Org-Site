@@ -5,6 +5,15 @@ html, body {
   padding: 0 !important;
 }
 
+label .fa,
+button .fa {
+  margin-right: .5em;
+}
+
+label.checkbox {
+  margin-left: 20px;
+}
+
 /*
  * Posts styles
  *
@@ -164,3 +173,4 @@ footer a:hover {
 .tag-cont .btn:hover {
   background-color: #eee;
 }
+
