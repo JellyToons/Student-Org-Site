@@ -11,6 +11,7 @@ export default DS.Model.extend({
     {
       id: 1,
       name: 'Brian Barrett',
+      username: 'Brian',
       password: 'admin',
       emailAddress: 'BrainSBarrett@jourrapide.com',
       profileImageUrl: 'http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg',
@@ -19,6 +20,7 @@ export default DS.Model.extend({
     {
       id: 2,
       name: 'Janice Collins',
+      username: 'Chris',
       password: 'admin',
       emailAddress: 'JaniceRCollins@dayrep.com',
       profileImageUrl: 'http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg',
