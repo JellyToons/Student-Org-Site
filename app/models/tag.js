@@ -13,12 +13,12 @@ export default DS.Model.extend({
     {
       id: 2,
       name: 'Surfing',
-      posts: [1]
+      posts: [2]
     },
     {
       id: 3,
       name: 'Chatbot',
-      posts: [1]
+      posts: [2]
     },
   ]
 });

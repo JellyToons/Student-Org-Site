@@ -12,14 +12,14 @@ export default DS.Model.extend({
       name: 'Brian Barrett',
       emailAddress: 'BrainSBarrett@jourrapide.com',
       profileImageUrl: 'http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg',
-      posts: [1]
+      posts: [2]
     },
     {
       id: 2,
       name: 'Janice Collins',
       emailAddress: 'JaniceRCollins@dayrep.com',
       profileImageUrl: 'http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg',
-      posts: [2]
+      posts: [1]
     },
   ]
 });

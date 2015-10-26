@@ -1,12 +1,12 @@
 <header id="page-title" class="jumbotron background">
 <div id="title-image" class="bg">
-	<img {{bind-attr src=model.image}} alt="">
+	<img {{bind-attr src=postContent.image}} alt="">
 </div>
 <div class="container">
 	<div class="horizontal-center vertical-center">
-		<h1 class="article-title">{{model.title}}</h1>
-		{{#if model.subtitle}}
-			<h2 class="article-subtitle">{{model.subtitle}}</h2>
+		<h1 class="article-title">{{postContent.title}}</h1>
+		{{#if postContent.subtitle}}
+			<h2 class="article-subtitle">{{postContent.subtitle}}</h2>
 		{{/if}}
 	</div>
 </div>
@@ -17,24 +17,47 @@
 		<div class="col-lg-12">
 			<div class="bs-component">
 				<article>
-				{{{model.content}}}
+				{{{postContent.content}}}
 				<div class="horizontal-center">
 					<div class="author">
 						<a href="#">
-							{{#if model.author.profileImageUrl}}<img {{bind-attr src="model.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{model.author.name}}</span>
+							{{#if postContent.author.profileImageUrl}}<img {{bind-attr src="postContent.author.profileImageUrl"}} class="author-image">{{/if}}<span class="author-name">{{postContent.author.name}}</span>
 						</a>
 				</div>
 				<div class="date-published">
-					February 12, 2015
+					{{postContent.datePublished}}
 				</div>
 			</div>
 		</article>
 			</div>
 
+			<!--<ul class="pager">
+				{{#if previousPost}}
+					<a href="/post/2">← Older</a>{{#link-to "post" tagName="li" class="previous"}}<a href="/post/2">← Older</a>{{/link-to}}
+				{{else}}
+					<li class="previous disabled"><a>← Older</a></li>
+				{{/if}}
+				{{#if nextPost}}
+					{{#link-to "post" tagName="li" class="next"}}<a href="/post/{{nextPost.id}}">Newer →</a>{{/link-to}}
+				{{else}}
+					<li class="next disabled"><a>Newer →</a></li>
+				{{/if}}
+			</ul>-->
+
+__{{nextModel.id}}__
 			<ul class="pager">
-				<li class="previous disabled"><a href="#">← Older</a></li>
-				<li class="next"><a href="#">Newer →</a></li>
+			{{#if previousPost}}
+				<li class="previous">{{#link-to "post" previousPost}}← Older{{/link-to}}</li>
+			{{else}}
+				<li class="previous disabled"><a>← Older</a></li>
+			{{/if}}
+			{{#if nextPost}}
+				<li class="next">{{#link-to "post" nextModel}}Newer →{{/link-to}}</li>
+			{{else}}
+				<li class="next disabled"><a>Newer →</a></li>
+			{{/if}}
 			</ul>
+			<!--<a href="/post/{{nextPost.id}}">GOTO POST 2</a>-->
 
 		</div>
 	</div>
@@ -92,46 +115,18 @@
 
 				<div class="recent-posts-cont">
 					<ul class="image-list">
-						<li class="table">
-							<a href="#" class="table-row">
-								<div class="vertical-center">
-									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg" class="author-image">
-								</div>
-								<div class="vertical-center article-title">
-									Snapper Rocks Surfing
-								</div>
-							</a>
-						</li>
-						<li class="table">
-							<a href="#" class="table-row">
-								<div class="vertical-center">
-									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/visionarty/73.jpg" class="author-image">
-								</div>
-								<div class="vertical-center article-title">
-									The Best Sushi in St. Louis
-								</div>
-							</a>
-						</li>
-						<li class="table">
-							<a href="#" class="table-row">
-								<div class="vertical-center">
-									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/thisisvandie/73.jpg" class="author-image">
-								</div>
-								<div class="vertical-center article-title">
-									Seven Sweet Skyline Stays
-								</div>
-							</a>
-						</li>
-						<li class="table">
-							<a href="#" class="table-row">
-								<div class="vertical-center">
-									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/lukekndy/73.jpg" class="author-image">
-								</div>
-								<div class="vertical-center article-title">
-									The Best Small Towns
-								</div>
-							</a>
-						</li>
+						{{#each post in recentPosts}}
+							<li class="table">
+								{{#link-to "post" post classNames="table-row"}}
+									<div class="vertical-center">
+										<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image">
+									</div>
+									<div class="vertical-center article-title">
+										{{post.title}}
+									</div>
+								{{/link-to}}
+							</li>
+						{{/each}}
 					</ul>
 				</div>
 
@@ -139,7 +134,7 @@
 			<div class="col-sm-4">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
 				<div class="tag-cont">
-				{{#each tag in model.tags}}
+				{{#each tag in postContent.tags}}
 					<button type="submit" class="btn">{{tag.name}}</button>
 				{{/each}}
 		</div>
