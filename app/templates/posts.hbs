@@ -3,7 +3,7 @@
 </header>
 
 <div class="container">
-	{{#each post in model}}
+	{{#each post in model.posts}}
 		<article class="article-preview">
 			<div class="row">
 				<div class="col-sm-2">
@@ -30,16 +30,15 @@
 		<div class="row">
 			<div class="col-sm-4">
 				<h3><i class="fa fa-leaf"></i> Iconic Locations</h3>
-				<address>
+				<!--<address>
 					<strong>Website:</strong><br />
 					<a href="#">www.iconic-locations.com</a>
-				</address>
+				</address>-->
 				<address>
 					<strong>Address:</strong><br />
 					1110 S 67th St<br />
 					Omaha, NE 68182
 				</address>
-
 
 				<div class="social-cont">
 					<span class="fa-stack facebook">
@@ -97,7 +96,7 @@
 								</div>
 							</a>
 						</li>
-						<li class="table">
+						<!--<li class="table">
 							<a href="#" class="table-row">
 								<div class="vertical-center">
 									<img src="http://s3.amazonaws.com/uifaces/faces/twitter/thisisvandie/73.jpg" class="author-image">
@@ -116,7 +115,7 @@
 									The Best Small Towns
 								</div>
 							</a>
-						</li>
+						</li>-->
 					</ul>
 				</div>
 
@@ -124,12 +123,9 @@
 			<div class="col-sm-4">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
 				<div class="tag-cont">
-					<button type="submit" class="btn">Surfing</button>
-					<button type="submit" class="btn">Travel</button>
-					<button type="submit" class="btn">Budget</button>
-					<button type="submit" class="btn">Beaches</button>
-					<button type="submit" class="btn">Gold Coast</button>
-					<button type="submit" class="btn">Australia</button>
+				{{#each tag in model.tags}}
+					<button type="submit" class="btn">{{tag.name}}</button>
+				{{/each}}
 				</div>
 			</div>
 		</div>

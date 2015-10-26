@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   needs: ['application'],
-  recentPosts: Ember.computed.alias('controllers.application.model'),
+  recentPosts: Ember.computed.alias('controllers.application.model.posts'),
   previousPost: Ember.computed('model', 'recentPosts.@each', function() {
     var recentPosts, index;
     recentPosts = this.get('recentPosts');
