@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('login', {});
   this.route('createAccount', {});
   this.route('auth', {});
+  this.route('search', {});
 });
 
 export default Router;
