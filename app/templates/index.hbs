@@ -36,8 +36,8 @@ This is the Home page
 				<ul>
 				{{#each event in model.events}}
 					<li>
-						{{event.title}}<br/>
-						{{date-formatter "MMMM DD, YYYY" event.start}}<br/>
+						<div class="event-title">{{event.title}}</div>
+						<div class="event-date">{{date-formatter "MMMM DD, YYYY" event.start}}</div>
 					</li>
 				{{/each}}
 				</ul>

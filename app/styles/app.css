@@ -174,3 +174,16 @@ footer a:hover {
   background-color: #eee;
 }
 
+/* Calendar */ 
+
+.btn.pull-right {
+  margin-left: 10px;
+}
+
+.upcoming-events .event-title {
+  margin-top: 20px;
+}
+
+.upcoming-events .event-date {
+  font-style: italic;
+}
