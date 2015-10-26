@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('createAccount', {});
   this.route('auth', {});
   this.route('search', {});
+  this.route('addEvent', {});
 });
 
 export default Router;

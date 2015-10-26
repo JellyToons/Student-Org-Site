@@ -1,0 +1,11 @@
+<form {{action 'addEvent' identification on='submit'}}>
+  <div class="form-group">
+    <label for="title">Name The Event</label>
+    {{input value=title placeholder='Event Name' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label for="eventDate">Date</label>
+    {{input value=eventDate placeholder='YYYY-MM-DD' class='form-control'}}
+  </div>
+  <button type="submit" class="btn btn-default">Create Event</button>
+</form>
