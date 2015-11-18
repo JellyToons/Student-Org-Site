@@ -29,7 +29,7 @@ export default Ember.Route.extend({
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
 		if(!auth.loggedIn){
-			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'  || transition.targetName === 'calendar'){
+			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'  || transition.targetName === 'calendar' || transition.targetName === 'about'){
 				
 			}
 			else{

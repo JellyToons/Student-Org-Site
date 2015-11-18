@@ -6,7 +6,7 @@ export default DS.Model.extend({
   emailAddress: DS.attr('string'),
   profileImageUrl: DS.attr('string'),
   posts: DS.hasMany('post')
-}).reopenClass({
+});/*.reopenClass({
   FIXTURES: [
     {
       id: 1,
@@ -27,4 +27,4 @@ export default DS.Model.extend({
       posts: [2]
     },
   ]
-});
+});*/

@@ -6,7 +6,7 @@ export default DS.Model.extend({
 	end: DS.attr('date'),
 	allday: DS.attr('boolean'),
 	tags: DS.hasMany('tag', { async: true })
-}).reopenClass({
+});/*.reopenClass({
   FIXTURES: [
 		{
 			id: 1,
@@ -29,7 +29,4 @@ export default DS.Model.extend({
             tags: [1,2]
         }
 	]
-});
-
-
-
+});*/

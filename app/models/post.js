@@ -8,7 +8,8 @@ export default DS.Model.extend({
   datePublished: DS.attr('string'),
   author: DS.belongsTo('user', { async: true }),
   tags: DS.hasMany('tag', { async: true })
-}).reopenClass({
+});
+/*.reopenClass({
   FIXTURES: [
     {
       id: 1,
@@ -40,3 +41,4 @@ export default DS.Model.extend({
     },
   ]
 });
+*/

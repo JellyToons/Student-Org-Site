@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr('string'),
   posts: DS.hasMany('post')
-}).reopenClass({
+});/*.reopenClass({
   FIXTURES: [
     {
       id: 1,
@@ -26,4 +26,4 @@ export default DS.Model.extend({
       posts: [2]
     },
   ]
-});
+});*/
