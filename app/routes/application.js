@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	currentTransition: null,
-	beforeModel: function(transition){
+	/*beforeModel: function(transition){
 		this.authCheck(transition);
 		//will have other stuff here once its connected to restapi
-	},
+	},*/
 	  // Data here is accessible from anywhere in the application
 	  model: function() {
 		return Ember.RSVP.hash({
