@@ -18,7 +18,7 @@ export default Ember.Route.extend({
 			events: this.get('store').find('event').then(function(events) {
 				return events.sortBy('start');
 			})
-	    });
+		});
 	  },
 	authCheck: function(transition){
 		//Method to check user credentials and redirect if necessary
@@ -53,6 +53,6 @@ export default Ember.Route.extend({
 	actions: {
 		willTransition: function(transition){
 			this.authCheck(transition);
-		}
+		},
 	}
 });
