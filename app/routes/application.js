@@ -46,13 +46,13 @@ export default Ember.Route.extend({
 		}
 	},
 	setupController: function(controller, model){
-		controller.set('authController', this.controllerFor('auth'));
+		//controller.set('authController', this.controllerFor('auth'));
 		controller.set('posts', model.posts);
 		controller.set('events', model.events);
 	},
 	actions: {
-		willTransition: function(transition){
+		/*willTransition: function(transition){
 			this.authCheck(transition);
-		},
+		},*/
 	}
 });
