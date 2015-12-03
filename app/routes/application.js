@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	currentTransition: null,
-	/*beforeModel: function(transition){
+	beforeModel: function(transition){
 		this.authCheck(transition);
 		//will have other stuff here once its connected to restapi
-	},*/
+	},
 	  // Data here is accessible from anywhere in the application
 	  model: function() {
 		return Ember.RSVP.hash({
@@ -25,10 +25,10 @@ export default Ember.Route.extend({
 		console.log('Checking authentication');
 		var t = this;
 		var auth = t.controllerFor('auth');
-		console.log("are you logged in "+ auth.get('loggedIn'));
+		console.log("are you logged in "+ auth.get('isLoggedIn'));
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
-		if(!auth.loggedIn){
+		if(!auth.isLoggedIn){
 			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'  || transition.targetName === 'calendar' || transition.targetName === 'about'){
 				
 			}
@@ -51,8 +51,8 @@ export default Ember.Route.extend({
 		controller.set('events', model.events);
 	},
 	actions: {
-		/*willTransition: function(transition){
+		willTransition: function(transition){
 			this.authCheck(transition);
-		},*/
+		},
 	}
 });
