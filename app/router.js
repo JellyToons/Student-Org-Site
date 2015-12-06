@@ -15,7 +15,8 @@ Router.map(function() {
   this.route('auth', {});
   this.route('search', {});
   this.route('addEvent', {});
-  this.route('bad-url', { path: '/*badurl' }); // Catch unrecognized URLs
+  // Catch unrecognized URLs
+  this.route('bad-url', { path: '/*badurl' });
 });
 
 export default Router;

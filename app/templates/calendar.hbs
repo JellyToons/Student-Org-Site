@@ -1,10 +1,18 @@
 
 {{#link-to "addEvent" tagName="button" class="btn btn-default pull-right"}}<i class="fa fa-calendar-plus-o"></i>Add Event{{/link-to}}
 
-{{!#each event in events}}
-{{!event.title}}
-{{!/each}}
-{{full-calendar events=events}}
+{{log "event stuff"}}
+{{log eventContent}}
+{{log eventContent.events}}
+
+{{!--#each event in eventContent.events}}
+{{event.title}}
+{{event.start}}
+{{event.end}}
+{{/each--}}
+{{#full-calendar}}
+	<div class="calendar"></div>
+{{/full-calendar}}
 
 
 {{outlet}}
