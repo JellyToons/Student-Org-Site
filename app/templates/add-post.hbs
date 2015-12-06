@@ -1,0 +1,23 @@
+<form {{action 'addPost' on='submit'}}>
+  <div class="form-group">
+    <label>Title of Post</label>
+    {{!bootstrap-datepicker autoclose=true placeholder='Event Name' class='form-control' value=title}}
+    {{input value=title placeholder='Title' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label>Subtitle</label>
+    {{!bootstrap-datepicker autoclose=true placeholder='Event Name' class='form-control' value=title}}
+    {{input value=subtitle placeholder='Subtitle' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label>Upload an Image</label>
+    {{!bootstrap-datepicker autoclose=true placeholder='Event Name' class='form-control' value=title}}
+    {{input value=image placeholder='Paste image URL here' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    {{!bootstrap-datepicker autoclose=true placeholder='Event Name' class='form-control' value=title}}
+    {{input value=content2 placeholder='Content' class='form-control'}}
+  </div>
+  <button type="submit" class="btn btn-default">Create Post</button>
+</form>

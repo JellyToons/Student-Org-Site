@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('addEvent', {});
   // Catch unrecognized URLs
   this.route('bad-url', { path: '/*badurl' });
+  this.route('addPost', {});
 });
 
 export default Router;

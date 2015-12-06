@@ -1,14 +1,14 @@
-<form {{action 'createAccount' identification on='submit'}}>
+<form {{action 'createAccount' on='submit'}}>
   <div class="form-group">
-    <label for="identification">Create A Username</label>
+    <label>Create A Username</label>
     {{input value=identification placeholder='Enter Username' class='form-control'}}
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
+    <label>Password</label>
     {{input value=password placeholder='Enter Password' class='form-control' type='password'}}
   </div>
    <div class="form-group">
-    <label for="password2">Password Again</label>
+    <label>Password Again</label>
     {{input value=password2 placeholder='Enter Password Again' class='form-control' type='password'}}
   </div>
   <button type="submit" class="btn btn-default">Create</button>

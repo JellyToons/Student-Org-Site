@@ -6,16 +6,28 @@ export default Ember.Controller.extend({
     addEvent() {
       //TODO: add account to database
       var title = this.get('title');
-      var eventDate = this.get('eventDate');
-      this.store.createRecord('event',{
+      var startDate = '';
+      startDate = this.get('startDate ');
+      var endDate = this.get('endDate');
+      /*this.store.createRecord('event',{
       	title: title,
-      	start: eventDate
-      });
+      	start: startDate
+      });*/
       //users.save();
-      this.set('title', '');
-      this.set('eventDate', '');
 
-      alert(title + " was added.");
+      //Ember.$.post( "/api/events", { title: "codePushEvent", start: "2015-12-20", end: "2015-12-22" } );
+      var ev = this.store.createRecord('event', {
+        title: title,
+        start: startDate,
+        end:   endDate
+      });
+      ev.save();
+
+      alert(title + " was added for dates " + startDate + " - " + endDate);
+      this.set('title', '');
+      this.set('startDate', '');
+      this.set('endDate', '');
+      this.transitionToRoute('calendar');
     }
   }
 

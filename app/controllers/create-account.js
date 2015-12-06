@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
   actions: {
     createAccount(name) {
       //TODO: add account to database

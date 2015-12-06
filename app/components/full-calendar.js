@@ -1,3 +1,6 @@
+//Thanks to https://github.com/jrue3084/amca/ for the code for this page.
+//It really helps with creating the full-calendar without having to use ember-full-calendar
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
