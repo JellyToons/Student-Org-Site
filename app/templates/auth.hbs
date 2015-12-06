@@ -1,5 +1,5 @@
 {{log username}}
-{{#if loggedIn}} {{! Display user name and logout button}}
+{{#if isLoggedIn}} {{! Display user name and logout button}}
 	<h1>Hello {{username}}</h1>
 	<button type="button" class="btn btn-default" {{action 'logout'}}><i class="fa fa-sign-out"></i>Sign out</button>
 {{else}} {{!Display login page}}

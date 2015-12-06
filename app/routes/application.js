@@ -28,7 +28,7 @@ export default Ember.Route.extend({
 		console.log("are you logged in "+ auth.get('isLoggedIn'));
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
-		if(!auth.isLoggedIn){
+		if(!auth.get('isLoggedIn')){
 			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'  || transition.targetName === 'calendar' || transition.targetName === 'about'){
 				
 			}

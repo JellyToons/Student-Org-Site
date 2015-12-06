@@ -8,7 +8,7 @@
 	{{#link-to "posts" tagName="li"}}<a href="/posts">Posts</a>{{/link-to}}
 	{{#link-to "calendar" tagName="li"}}<a href="/calendar">Calendar</a>{{/link-to}}
 	{{#link-to "about" tagName="li"}}<a href="/about">About</a>{{/link-to}}
-	{{#link-to "admin" tagName="li"}}<a href="/admin">Admin</a>{{/link-to}}	
+	{{!--#link-to "admin" tagName="li"}}<a href="/admin">Admin</a>{{/link-to--}}	
 	{{!--#link-to "search" tagName="li"}}<a href="/search">Search</a> <input id="search" type="text"/>{{/link-to--}}
 	<li><form class="navbar-form" role="search">
         <div class="input-group">
@@ -23,17 +23,17 @@
 
 	{{!--else}}
 		{{#link-to 'createAccount' tagName="li"}}<a href="/createAccount">Create Account</a>{{/link-to--}}
-		
-	{{#if authControllerChild.loggedIn}}
+	{{log authControllerChild.isLoggedIn}}
+	{{#if authControllerChild.isLoggedIn}}
 		<!--li class="navbar-text navbar-right">Signed in{{!authControllerChild.username}}
 		</li-->
 		<!--button {{action 'foo'}}>alert foo</button-->
-		{{!--#link-to 'auth' tagName="li"}}<a href="/auth">Logout</a>{{/link-to--}}
+		{{#link-to 'auth' tagName="li"}}<a href="/auth">Logout</a>{{/link-to}}
 	{{else}}
-		{{#link-to 'createAccount' tagName="li"}}<a href="/createAccount">Create Account</a>{{/link-to}}
+		{{#link-to 'auth' tagName="li"}}<a href="/auth"><i class="fa fa-user"></i></a>{{/link-to}}
+		{{!--#link-to 'createAccount' tagName="li"}}<a href="/createAccount">Create Account</a>{{/link-to--}}
 	{{/if}}
 	
-	{{#link-to 'auth' tagName="li"}}<a href="/auth"><i class="fa fa-user"></i></a>{{/link-to}}
 </ul>
 </div>
 </div>

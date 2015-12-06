@@ -22,15 +22,16 @@ export default Ember.Controller.extend({
                     controllerObj.set('username', response.username);
                     controllerObj.set('userid', response.userid);
                     controllerObj.set('isLoggedIn', true);
+                	controllerObj.transitionToRoute('/'); //redirects back home after login
                 } else{
                     //errors
-                    console.log('Login POST Request to ../api/session/ was successful.');
+                    console.log('Login POST Request to ../api/session/ was successful but with errors.');
                     controllerObj.set('errorMsg', response.message);
                 }
             });
         },
         logout: function(){
-            var remember = this.get('remember');;
+            var remember = this.get('remember');
             var controllerObj = this;
             Ember.$.ajax({url: '../api/session/', type: 'DELETE'}).then(
             function(response){
@@ -44,7 +45,7 @@ export default Ember.Controller.extend({
 
                 }
                 controllerObj.transitionToRoute('auth');
-            })
+            });
 
         },
     }
