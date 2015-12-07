@@ -12,7 +12,7 @@
 </div>
 </header>
 
-{{profiles.profiles}}
+{{!profiles.profiles}}
 
 <div class="container">
 	<div class="row">
@@ -34,7 +34,7 @@
 					<ul class="image-list">
 						{{#each post in recentPosts}}
 							<li class="table">
-								{{#link-to "post" post classNames="table-row"}}
+								{{#link-to "post" post}}
 									<div class="vertical-center">
 										<img {{bind-attr src="post.author.profileImageUrl"}} class="author-image">
 									</div>
