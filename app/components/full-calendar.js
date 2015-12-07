@@ -8,7 +8,7 @@ export default Ember.Component.extend({
 
     test: function(){
       var auth = this.get('authControllerChild');
-      console.log('in nav bar sending login to auth controller');
+      //console.log('in nav bar sending login to auth controller');
       auth.send('logout');
     },
   },
@@ -18,7 +18,6 @@ export default Ember.Component.extend({
 
     Ember.run.scheduleOnce('afterRender', this, function () {
       // some jQuery UI stuff
-      console.log('afterRender ran');
       this.$('.calendar').fullCalendar( {
         header: {
           left: 'title',

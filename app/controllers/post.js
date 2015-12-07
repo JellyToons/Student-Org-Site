@@ -7,8 +7,8 @@ export default Ember.ObjectController.extend({
   previousPost: Ember.computed('model', 'recentPosts.@each', function() {
     var recentPosts, index;
     recentPosts = this.get('recentPosts');
-    console.log('b4 recentposts');
-    console.log(recentPosts);
+    //console.log('b4 recentposts');
+    //console.log(recentPosts);
     index = recentPosts.indexOf(this.get('model'));
     // Cap the index
     if (index !== -1) {index -= 1;}

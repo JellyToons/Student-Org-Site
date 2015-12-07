@@ -6,10 +6,10 @@ export default Ember.View.extend({
 			height: Ember.$(window).height()-(Ember.$('.navbar-header').height()+40)
 		});*/
 
-		/*console.log(this.$("#calendar").css('width'));
-		console.log(this.$("#calendar").css('height'));
-		console.log(this.$(window).width());
-		console.log(this.$(window).height());
+		/*//console.log(this.$("#calendar").css('width'));
+		//console.log(this.$("#calendar").css('height'));
+		//console.log(this.$(window).width());
+		//console.log(this.$(window).height());
 		this.$("#calendar").fullCalendar('option', 'height', (this.$(window).height()));
 		//this.$("#calendar").fullCalendar('option', 'width', (this.$(window).width()));
 		//this.$("#calendar").height(this.$(window).height());
@@ -18,7 +18,7 @@ export default Ember.View.extend({
 			this.$("#calendar").width(this.$(window).width());
 			this.$("#calendar").width(this.$(window).height());
 		});
-		console.log(this.$("#calendar").css('width'));
-		console.log(this.$("#calendar").css('height'));*/
+		//console.log(this.$("#calendar").css('width'));
+		//console.log(this.$("#calendar").css('height'));*/
 	//}
 });
