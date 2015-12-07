@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       //TODO: add account to database
       var title = this.get('title');
       var startDate = '';
-      startDate = this.get('startDate ');
+      startDate = this.get('startDate');
       var endDate = this.get('endDate');
       /*this.store.createRecord('event',{
       	title: title,
