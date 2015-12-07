@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  user: DS.belongsTo('userprofile'),
   name: DS.attr('string'),
   password: DS.attr('string'),
   emailAddress: DS.attr('string'),

@@ -6,6 +6,9 @@ export default Ember.Route.extend({
 	},
 	setupController: function(controller, model){
 		var recent = this.modelFor('application').posts;
+		var profiles = this.modelFor('application');
+		//console.log(profiles);
+		/*var profiles = $()*/
 
 		controller.set('recentPosts', recent);
 		controller.set('postContent', model);
@@ -19,6 +22,7 @@ export default Ember.Route.extend({
 			if (recent.objectAt(index + 1) !== undefined) { index = index +1; }
 			return recent.objectAt(index);
 		}()));
+		controller.set('profiles', profiles);
 
 	},
 });

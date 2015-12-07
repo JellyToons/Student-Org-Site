@@ -21,5 +21,6 @@ export default Ember.ObjectController.extend({
     // Cap the index
     if (index !== -1) {index += 1;}
     return recentPosts.objectAt(index);
-  })
+  }),
+  profiles: null
 });

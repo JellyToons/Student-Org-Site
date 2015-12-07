@@ -17,6 +17,10 @@ export default Ember.Route.extend({
 			}),
 			events: this.get('store').find('event').then(function(events) {
 				return events.sortBy('start');
+			}),
+			profiles: this.get('store').find('userprofile').then(function(profiles) {
+				console.log(profiles);
+				return profiles;
 			})
 		});
 	  },
