@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
         image: image,
         content: content,
         datePublished: today,
-        author: author
+        author: author,
         //TODO: get "datePublished", "author" and tags
         tags: tags,
       });
