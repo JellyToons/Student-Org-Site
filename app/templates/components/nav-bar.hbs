@@ -23,7 +23,7 @@
 
 	{{!--else}}
 		{{#link-to 'createAccount' tagName="li"}}<a href="/createAccount">Create Account</a>{{/link-to--}}
-	{{log authControllerChild.isLoggedIn}}
+	{{!log authControllerChild.isLoggedIn}}
 	{{#if authControllerChild.isLoggedIn}}
 		<!--li class="navbar-text navbar-right">Signed in{{!authControllerChild.username}}
 		</li-->
@@ -33,7 +33,6 @@
 		{{#link-to 'auth' tagName="li"}}<a href="/auth"><i class="fa fa-user"></i></a>{{/link-to}}
 		{{!--#link-to 'createAccount' tagName="li"}}<a href="/createAccount">Create Account</a>{{/link-to--}}
 	{{/if}}
-	
 </ul>
 </div>
 </div>

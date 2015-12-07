@@ -26,12 +26,12 @@ export default Ember.Route.extend({
 	  },
 	authCheck: function(transition){
 		//Method to check user credentials and redirect if necessary
-		console.log('Checking authentication');
+		//console.log('Checking authentication');
 		var t = this;
 		var auth = t.controllerFor('auth');
-		console.log("are you logged in "+ auth.get('isLoggedIn'));
+		//console.log("are you logged in "+ auth.get('isLoggedIn'));
 		var previoustrans = t.get('currentTransition');
-		console.log('User attempting to access: /'+transition.targetName);
+		//console.log('User attempting to access: /'+transition.targetName);
 		if(!auth.get('isLoggedIn')){
 			if(transition.targetName === 'auth' || transition.targetName === 'createAccount'  || transition.targetName === 'calendar' || transition.targetName === 'about'){
 				
@@ -39,12 +39,12 @@ export default Ember.Route.extend({
 			else{
 				t.set('currentTransition', transition);
 				transition.abort();
-				console.log('User is unauthenicated, redirecting');
+				//console.log('User is unauthenicated, redirecting');
 				t.transitionTo('auth');
 			}
 		}
 		else if(previoustrans){
-			console.log('Redirecting back to original request: /'+previoustrans.targetName);
+			//console.log('Redirecting back to original request: /'+previoustrans.targetName);
 			t.set('currentTransition', null);
 			previoustrans.retry();
 		}
