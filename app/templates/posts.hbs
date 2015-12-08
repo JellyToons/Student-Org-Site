@@ -2,7 +2,7 @@
 {{#link-to "addPost" tagName="button" class="btn btn-default pull-right"}}<i class="fa fa-calendar-plus-o"></i>Add Post{{/link-to}}
 
 <div class="container">
-	{{#each post in model.posts}}
+	{{#each posts as |post|}}
 		<article class="article-preview">
 			<div class="row">
 				<div class="col-sm-2">
@@ -75,7 +75,7 @@
 
 				<div class="recent-posts-cont">
 					<ul class="image-list">
-						{{#each post in (each-limit model.posts 3)}}
+						{{#each topposts as |post|}}
 						<li class="table">
 							{{#link-to "post" post class="table-row"}}
 								<div class="vertical-center">
@@ -96,7 +96,7 @@
 			<div class="col-sm-4">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
 				<div class="tag-cont">
-				{{#each tag in model.tags}}
+				{{#each tags as |tag|}}
 					<button type="submit" class="btn">{{tag.name}}</button>
 				{{/each}}
 				</div>

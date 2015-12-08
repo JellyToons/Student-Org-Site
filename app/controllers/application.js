@@ -4,5 +4,6 @@ export default Ember.ObjectController.extend({
 	authController: null,
 	posts: null,
 	events: null,
-	profiles: null,
+	tags: null,
+	userprofiles: null,
 });

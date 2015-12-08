@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
                 'username': username,
                 'password': password};
             var controllerObj = this;
+            var app = this.controllerFor('application');
             Ember.$.post('../api/session/', data, function(response){
                 if(response.isauthenticated){
                     //success
@@ -22,8 +23,13 @@ export default Ember.Controller.extend({
                     controllerObj.set('username', response.username);
                     controllerObj.set('userid', response.userid);
                     controllerObj.set('isLoggedIn', true);
-                	controllerObj.transitionToRoute('/'); //redirects back home after login
-                } else{
+                    app.set('posts', controllerObj.store.findAll('post'));
+                    app.set('events', controllerObj.store.findAll('event'));
+                    app.set('tags', controllerObj.store.findAll('tag'));
+                    app.set('userprofiles', controllerObj.store.findAll('userprofile'));
+                    controllerObj.transitionToRoute('home'); //redirects back home after login
+                    //controllerObj.transitionTo('application');
+                } else {
                     //errors
                     //console.log('Login POST Request to ../api/session/ was successful but with errors.');
                     controllerObj.set('errorMsg', response.message);
