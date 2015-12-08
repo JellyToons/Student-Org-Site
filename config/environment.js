@@ -51,7 +51,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'iasc8080-02.ist.unomaha.edu';
+    ENV.APP.API_HOST = 'http://iasc8080-02.ist.unomaha.edu';
   }
 
   return ENV;
