@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import moment from 'moment';
 
 export default Ember.Controller.extend({
   title: '',
@@ -21,9 +20,9 @@ export default Ember.Controller.extend({
 
       //console.log("=======================");
       //console.log(author + " " + today);
-      Ember.$.post( "/api/posts", { 
-        title: title, 
-        subtitle: subtitle, 
+      Ember.$.post( "/api/posts/", {
+        title: title,
+        subtitle: subtitle,
         image: image,
         content: content,
         tags: tags2,
