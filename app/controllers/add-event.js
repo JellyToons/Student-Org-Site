@@ -5,8 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     addEvent() {
       var title = this.get('title');
-      var startDate = '';
-      startDate = this.get('startDate');
+      var startDate = this.get('startDate');
       var endDate = this.get('endDate');
 
       var ev = this.store.createRecord('event', {
