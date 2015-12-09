@@ -131,6 +131,8 @@ footer {
   margin-bottom: 0;
   color: white;
   font-family: 'roboto';
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 footer h2, footer h3 {
   font-family: 'ubuntu';

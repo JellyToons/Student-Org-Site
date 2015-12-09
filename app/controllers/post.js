@@ -3,24 +3,40 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   needs: ['application'],
   postContent: null,
-  recentPosts: Ember.computed.alias('controllers.application.posts'),
-  previousPost: Ember.computed('model', 'recentPosts.@each', function() {
-    var recentPosts, index;
-    recentPosts = this.get('recentPosts');
-    //console.log('b4 recentposts');
-    //console.log(recentPosts);
-    index = recentPosts.indexOf(this.get('model'));
+  posts: (function(){
+    return this.store.peekAll('post');
+  }).property('posts'),
+  previousPost: Ember.computed('model', 'posts.@each', function() {
+    var posts, index;
+    posts = this.get('posts');
+    //console.log('b4 posts');
+    //console.log(posts);
+    index = posts.indexOf(this.get('model'));
     // Cap the index
     if (index !== -1) {index -= 1;}
-    return recentPosts.objectAt(index);
+    return posts.objectAt(index);
   }),
-  nextPost: Ember.computed('model', 'recentPosts.@each', function() {
-    var recentPosts, index;
-    recentPosts = this.get('recentPosts');
-    index = recentPosts.indexOf(this.get('model'));
+  nextPost: Ember.computed('model', 'posts.@each', function() {
+    var posts, index;
+    posts = this.get('posts');
+    index = posts.indexOf(this.get('model'));
     // Cap the index
     if (index !== -1) {index += 1;}
-    return recentPosts.objectAt(index);
+    return posts.objectAt(index);
   }),
-  profiles: null
+  /*previousPost: function(){
+      var index = recent.indexOf(model);
+      if (recent.objectAt(index - 1) !== undefined) { index = index -1; }
+      return recent.objectAt(index);
+  },*/
+
+  topposts: Ember.computed('posts', function(){
+    return this.get('posts').slice(0, 3);
+  }),
+  tags: (function(){
+    return this.store.peekAll('tag');
+  }).property('tags'),
+  profiles: (function(){
+    return this.store.peekAll('userprofiles');
+  }).property('profiles'),
 });

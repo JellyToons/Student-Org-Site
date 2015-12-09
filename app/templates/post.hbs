@@ -28,6 +28,7 @@
 				</div>
 			</div>
 
+			<!--
 			<div class="post-sidebar-module">
 				<h3><i class="fa fa-newspaper-o"></i> Recent Posts</h3>
 				<div class="recent-posts-cont">
@@ -46,7 +47,7 @@
 						{{/each}}
 					</ul>
 				</div>
-			</div>
+			</div>-->
 
 			<div class="post-sidebar-module">
 				<h3><i class="fa fa-tags"></i> Tags</h3>
@@ -81,3 +82,84 @@
 
 	</div>
 </div>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<h3><i class="fa fa-leaf"></i> Contact Us</h3>
+				<!--<address>
+					<strong>Website:</strong><br />
+					<a href="#">www.iconic-locations.com</a>
+				</address>-->
+				<address>
+					<strong>Address:</strong><br />
+					1110 S 67th St<br />
+					Omaha, NE 68182
+				</address>
+
+				<div class="social-cont">
+					<span class="fa-stack facebook">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack twitter">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack google">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+
+					<span class="fa-stack instagram">
+						<a href="#">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-linkedin fa-stack-1x fa-inverse social-ico"></i>
+						</a>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fa fa-newspaper-o"></i> Recent Posts</h3>
+
+				<div class="recent-posts-cont">
+					<ul class="image-list">
+						{{#each topposts as |post|}}
+						<li class="table">
+							{{#link-to "post" post class="table-row"}}
+								<div class="vertical-center">
+									<!--<img src="http://s3.amazonaws.com/uifaces/faces/twitter/cacique/73.jpg" class="author-image">-->
+									<i class="fa fa-file-text-o author-image"></i>
+								</div>
+								<div class="vertical-center article-title">
+									{{post.title}}
+								</div>
+							{{/link-to}}
+						</li>
+						{{/each}}
+
+					</ul>
+				</div>
+
+			</div>
+			<div class="col-sm-4">
+				<h3><i class="fa fa-tags"></i> All Tags</h3>
+				<div class="tag-cont">
+				{{#each tags as |tag|}}
+					<button type="submit" class="btn">{{tag.name}}</button>
+				{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
