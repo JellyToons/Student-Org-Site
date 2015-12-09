@@ -24,6 +24,8 @@
 					</a>
 				</div>
 				<div class="date-published">
+					{{log model.datePublished}}
+					{{log model}}
 					{{date-formatter "MMMM DD, YYYY" model.datePublished}}
 				</div>
 			</div>
@@ -156,7 +158,9 @@
 				<h3><i class="fa fa-tags"></i> All Tags</h3>
 				<div class="tag-cont">
 				{{#each tags as |tag|}}
-					<button type="submit" class="btn">{{tag.name}}</button>
+					{{#if tag.name}}
+						<button type="submit" class="btn">{{tag.name}}</button>
+					{{/if}}
 				{{/each}}
 				</div>
 			</div>

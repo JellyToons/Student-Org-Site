@@ -97,7 +97,9 @@
 				<h3><i class="fa fa-tags"></i> All Tags</h3>
 				<div class="tag-cont">
 				{{#each tags as |tag|}}
-					<button type="submit" class="btn">{{tag.name}}</button>
+					{{#if tag.name}}
+						<button type="submit" class="btn">{{tag.name}}</button>
+					{{/if}}
 				{{/each}}
 				</div>
 			</div>

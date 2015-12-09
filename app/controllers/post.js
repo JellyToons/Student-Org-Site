@@ -31,7 +31,7 @@ export default Ember.ObjectController.extend({
   },*/
 
   topposts: Ember.computed('posts', function(){
-    return this.get('posts').slice(0, 3);
+    return this.get('posts').toArray().reverse().slice(0, 4);
   }),
   tags: (function(){
     return this.store.peekAll('tag');
