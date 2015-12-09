@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 		return this.get('posts').slice(0, 4);
 	}),*/
 	posts: (function(){
-		return this.store.findAll('post');
+		return this.store.peekAll('post');
 	}).property('posts'),
 	sorting: ['id:desc'],
 	sortedposts: Ember.computed.sort('posts', 'sorting'),
@@ -35,7 +35,7 @@ export default Ember.Controller.extend({
 		});
 	}.observes('sortedPosts').on('init'),*/
 	events: (function(){
-		return this.store.findAll('event');
+		return this.store.peekAll('event');
 	}).property('events'),
 	/*posts: (function(){
 		return this.store.peekAll('post');

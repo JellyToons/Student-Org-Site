@@ -21,7 +21,6 @@ export default Ember.Route.extend({
 					return events.sortBy('start');
 				}),
 				profiles: this.get('store').find('userprofile').then(function(profiles) {
-					console.log(profiles);
 					return profiles;
 				})
 			});

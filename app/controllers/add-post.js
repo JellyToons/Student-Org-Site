@@ -16,7 +16,15 @@ export default Ember.Controller.extend({
       var image = this.get('image');
       var content = this.get('content2');
       var tags2 = this.get('tags2');
-      console.log(tags2);
+
+      /*var p = this.store.createRecord('post', {
+        title: title,
+        subtitle: subtitle,
+        image: image,
+        content: content,
+        //tags: tags2,
+      });
+      p.save();*/
 
       //console.log("=======================");
       //console.log(author + " " + today);
