@@ -10,7 +10,6 @@ export default Ember.Controller.extend({
             //do stuff to authenticate here
             var username = this.get('username');
             var password = this.get('password');
-            var remember = this.get('remember');
             var data = {
                 'username': username,
                 'password': password};
@@ -40,7 +39,7 @@ export default Ember.Controller.extend({
             var remember = this.get('remember');
             var controllerObj = this;
             Ember.$.ajax({url: '../api/session/', type: 'DELETE'}).then(
-            function(response){
+            function(){
                 //console.log('Logout success.');
                 controllerObj.set('isLoggedIn', false);
                 controllerObj.set('errorMsg', '');
