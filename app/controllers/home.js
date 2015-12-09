@@ -12,6 +12,9 @@ export default Ember.Controller.extend({
 	}).property('posts'),
 	sorting: ['id:desc'],
 	sortedposts: Ember.computed.sort('posts', 'sorting'),
+	eventlist: (function(){
+		return this.store.peekAll('event');
+	}).property('eventlist'),
 	/*aposts: null,
 	topposts: (function(){
 		var x = this.get('sortedposts');
@@ -34,9 +37,11 @@ export default Ember.Controller.extend({
 			i++;
 		});
 	}.observes('sortedPosts').on('init'),*/
-	events: (function(){
-		return this.store.peekAll('event');
-	}).property('events'),
+	// events: (function(){
+	// 	console.log("hiihaihhh");
+	// 	console.log(this.store.peekAll('event'));
+	// 	return this.store.peekAll('event');
+	// }).property('events'),
 	/*posts: (function(){
 		return this.store.peekAll('post');
 	}).property('posts'),*/

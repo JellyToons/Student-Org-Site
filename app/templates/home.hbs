@@ -34,7 +34,8 @@
 			<h2><i class="fa fa-calendar"></i> Upcoming Events</h2>
 			<div class="upcoming-events">
 				<ul>
-				{{#each events as |event|}}
+					{{!log events}}
+				{{#each eventlist as |event|}}
 					<li>
 						<div class="event-title">{{event.title}}</div>
 						<div class="event-date">{{date-formatter "MMMM DD, YYYY" event.start}}</div>
