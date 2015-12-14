@@ -1,7 +1,7 @@
 # Student-org-site
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This application is intended for student organizations to quickly and easily create a website.
 
 ## Prerequisites
 
