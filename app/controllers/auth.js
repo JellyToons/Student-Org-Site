@@ -24,6 +24,8 @@ export default Ember.Controller.extend({
                     controllerObj.set('isLoggedIn', true);
                     app.set('posts', controllerObj.store.findAll('post'));
                     app.set('events', controllerObj.store.findAll('event'));
+                    app.set('orgnames', controllerObj.store.findAll('orgname'));
+                    app.set('orgabouts', controllerObj.store.findAll('orgabout'));
                     app.set('tags', controllerObj.store.findAll('tag'));
                     app.set('userprofiles', controllerObj.store.findAll('userprofile'));
                     controllerObj.transitionToRoute('home'); //redirects back home after login

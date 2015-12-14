@@ -6,4 +6,6 @@ export default Ember.ObjectController.extend({
 	events: null,
 	tags: null,
 	userprofiles: null,
+	orgnames: null,
+	orgabouts: null,
 });

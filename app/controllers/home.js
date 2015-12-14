@@ -7,7 +7,19 @@ export default Ember.Controller.extend({
 	topposts: Ember.computed('posts', function(){
 		return this.get('posts').slice(0, 4);
 	}),*/
+
+	orgNameList: (function(){
+		return this.store.peekAll('orgname');
+	}).property('orgNameList'),
+
+	orgAboutList: (function(){
+		return this.store.peekAll('orgabout');
+	}).property('orgAboutList'),
+
+
 	posts: (function(){
+		console.log("getting all of this", this.orgNameList);
+		console.log("peeking At posts:", this.store.peekAll('post'));
 		return this.store.peekAll('post');
 	}).property('posts'),
 	sorting: ['id:desc'],
@@ -15,6 +27,7 @@ export default Ember.Controller.extend({
 	eventlist: (function(){
 		return this.store.peekAll('event');
 	}).property('eventlist'),
+	
 	/*aposts: null,
 	topposts: (function(){
 		var x = this.get('sortedposts');

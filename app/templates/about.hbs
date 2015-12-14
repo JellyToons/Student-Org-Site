@@ -2,12 +2,8 @@
 	<h1 class="text-center">About Us</h1>
 </header>
 
-<p>This is the about page</p>
-
-<p>
-This club is so awesome because it does so much stuff<br/>
-These are lots of lines of information about the club<br/>
-This is better than lorem ipsum at least<br/>
-</p>
+{{#each orgAboutList as |org|}}
+{{org.about}}
+{{/each}}
 
 {{!outlet}}

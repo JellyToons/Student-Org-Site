@@ -22,7 +22,10 @@ export default Ember.Route.extend({
 				}),
 				profiles: this.get('store').find('userprofile').then(function(profiles) {
 					return profiles;
-				})
+				}),
+				/*orgNames: this.get('store').find('staticContent').then(function(orgName){
+					return orgName;
+				})*/
 			});
 		}
       },
@@ -56,6 +59,7 @@ export default Ember.Route.extend({
 		if (model) {
 			controller.set('posts', model.posts);
 			controller.set('events', model.events);
+			controller.set('orgNames', model.orgNames);
 		}
 	},
 	actions: {
