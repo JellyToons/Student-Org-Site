@@ -1,7 +1,7 @@
 # Student-org-site
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This application is intended for student organizations to quickly and easily create a website.
 
 ## Prerequisites
 
@@ -15,6 +15,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
+* For a production environment, please see [this] (https://github.com/clenk/Student_Org_Site_Backend)
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `npm install`

@@ -13,12 +13,15 @@ Router.map(function() {
   this.route('admin', {});
   this.route('createAccount', {});
   this.route('auth', {});
-  this.route('search', {});
   this.route('addEvent', {});
-  // Catch unrecognized URLs
-  this.route('bad-url', { path: '/*badurl' });
   this.route('addPost', {});
   this.route('home', {});
+  //this.route('search', {});
+  this.route('search', function() {
+    this.route('results', {path: '/:keyword'});
+  });
+  // Catch unrecognized URLs
+  this.route('bad-url', { path: '/*badurl' });
 });
 
 export default Router;

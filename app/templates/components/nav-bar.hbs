@@ -1,13 +1,38 @@
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div class="navbar-header">
-{{#link-to "home" tagName="li"}}<a class="navbar-brand" href="#">HOME</a>{{/link-to}}
+	{{#link-to "home" tagName="li"}}<a class="navbar-brand" href="#">HOME</a>{{/link-to}}
 </div>
 <div>
 <ul class="nav navbar-nav">
 	{{#link-to "posts" tagName="li"}}<a href="/posts">Posts</a>{{/link-to}}
 	{{#link-to "calendar" tagName="li"}}<a href="/calendar">Calendar</a>{{/link-to}}
 	{{#link-to "about" tagName="li"}}<a href="/about">About</a>{{/link-to}}
+	{{#link-to "search" tagName="li"}}<a href="/search">Search</a>{{/link-to}}
+	<!--<li><form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="searchField" id="searchField">
+            <div class="input-group-btn">
+                {{#link-to "search" searchField tagName="button" class="btn btn-default" type="submit"}}<i class="fa fa-search"></i>{{/link-to}}
+            </div>
+        </div>
+    </form></li>>
+	<!--<li><form class="navbar-form" role="search" action="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="searchField" id="searchField">
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form></li>-->
+	<!--<li>{{!#bs-form formLayout="inline"  class="navbar-form"}}
+		<div class="input-group">
+			{{!bs-input type="text" value=search placeholder="filter photos"}}
+			<div class="input-group-btn">
+				<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+			</div>
+		</div>
+	{{!/bs-form}}</li>-->
 </ul>
 <ul class="nav navbar-nav navbar-right">
 
