@@ -60,6 +60,8 @@ label.checkbox {
   background-color: #1f4a6f;
   font-family: 'ubuntu';
   overflow: hidden;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 #title-image {
   filter:alpha(opacity=80);
@@ -72,6 +74,9 @@ label.checkbox {
 }
 #page-title .article-title, #page-title .article-subtitle {
   text-shadow: 0px 0px 40px black;
+}
+#page-title h1 {
+  margin-top: 10px;
 }
 
 /* Post Sidebar */

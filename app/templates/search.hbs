@@ -1,1 +1,13 @@
+{{page-title title='Search'}}
+{{!log search}}
+
+{{#bs-form formLayout="inline" class="navbar-form"}}
+	<div class="input-group">
+		{{bs-input type="text" value=keyword placeholder="filter photos"}}
+		<div class="input-group-btn">
+			<button {{action 'search' keyword}} class="btn btn-default"><i class="fa fa-search"></i></button>
+		</div>
+	</div>
+{{/bs-form}}
+
 {{outlet}}

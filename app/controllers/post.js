@@ -12,7 +12,7 @@ export default Ember.ObjectController.extend({
     index = posts.indexOf(this.get('postContent'));
     // Cap the index
     if (index !== -1) {index -= 1;}
-    console.log(posts.objectAt(index));
+    //console.log(posts.objectAt(index));
     return posts.objectAt(index);
   }),
   nextPost: Ember.computed('postContent', 'posts.@each', function() {
