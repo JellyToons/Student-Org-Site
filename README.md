@@ -15,6 +15,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
+* For a production environment, please see [this] (https://github.com/clenk/Student_Org_Site_Backend)
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `npm install`
