@@ -25,7 +25,7 @@ You will need the following things properly installed on your computer.
 
 After following the installation steps above, download a new bootstrap.css and bootstrap.min.css to replace the ones in /bower_components/bootstrap/dist/css.
 
-## Running The Server
+## Running Local Server
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
