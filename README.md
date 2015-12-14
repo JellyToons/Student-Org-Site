@@ -17,18 +17,20 @@ You will need the following things properly installed on your computer.
 
 * For a production environment, please see [this] (https://github.com/clenk/Student_Org_Site_Backend)
 * `git clone <repository-url>` this repository
-* change into the new directory
+* `cd` into the new directory
 * `npm install`
 * `bower install`
 
-## Using a different Bootstrap theme
+## Using A Different Bootstrap Theme
 
 After following the installation steps above, download a new bootstrap.css and bootstrap.min.css to replace the ones in /bower_components/bootstrap/dist/css.
 
-## Running / Development
+## Running The Server
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+
+## Development
 
 ### Code Generators
 
@@ -43,10 +45,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
